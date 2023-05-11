@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CompetenciaController;
+use App\Http\Controllers\SetorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+Route::get('/setores', [SetorController::class, 'index'])->name('setores.index');
+
+
+Route::get('/competencias', [CompetenciaController::class, 'index'])->name('competencias.index');
+Route::get('/competencias/criar', [CompetenciaController::class, 'create'])->name('competencias.create');
+
 
 Route::get('/', function () {
     return view('welcome');

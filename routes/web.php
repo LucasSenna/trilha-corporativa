@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CompetenciaController;
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\SetorController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::get('/itens', [ItemController::class, 'index'])->name('itens.index');
+Route::get('/itens/criar', [ItemController::class, 'create'])->name('itens.create');
 
 Route::get('/setores', [SetorController::class, 'index'])->name('setores.index');
 

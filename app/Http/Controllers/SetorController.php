@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sector;
 use Illuminate\Http\Request;
 
 class SetorController extends Controller
@@ -11,8 +12,10 @@ class SetorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Sector $sector)
     {
+        $sectors = $sector->all();
+        dd($sectors);
         return view('setores.index');
     }
 
